@@ -1,7 +1,7 @@
 Jeu de calcul aléatoire
 Un jeu éducatif pour tester vos compétences en mathématiques !
 
-Ce jeu web génère des expressions mathématiques aléatoires avec des nombres comprises entres [0;10] et des opérateurs (+, -, x) que vous devez résoudre. 
+Ce jeu web génère des expressions mathématiques aléatoires avec des nombres comprises entres [0;100] et des opérateurs (+, -, x) que vous devez résoudre. 
 Le but est de tester vos compétences en calcul mental et de vous amuser en même temps.
 
 Fonctionnalités:
