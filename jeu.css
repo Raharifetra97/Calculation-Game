@@ -65,6 +65,13 @@ section input[type="submit"]:hover{
     font-size: 25px;
     color: #fff;
     text-align: center;
+    padding: 20px;
+}
+.scoresult {
+    font-size: 25px;
+    color: #08e279;
+    text-align: center;
+    padding: 20px;
 }
 a{
     color: #fff;

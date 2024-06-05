@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     var nb1 = document.querySelector('.nb1');
     var nb2 = document.querySelector('.nb2');
@@ -7,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     var score = document.querySelector('.score');
     var link = document.querySelector('.link');
     var section = document.querySelector('section');
+    var resultScrore = document.querySelector('.scoresult');
     var compteur = 0;
     var opera = ['+', '-', '*'];
     var random1, random2, operaRandom;
@@ -20,6 +20,45 @@ document.addEventListener('DOMContentLoaded', () => {
         nb1.innerHTML = random1;
         nb2.innerHTML = random2;
         operateur.innerHTML = opera[operaRandom];
+    }
+
+    // Fonction qui évaluent le résultat de l'utilisateur
+    function resultTest(n) {
+        if (n <= 4) {
+            message.style.background = "red";
+            message.innerHTML = "Vous avez perdu";
+            resultScrore.innerHTML = `Very Bad score`;
+            score.innerHTML = `Score Final <br> <span>${n}</span>`;
+            link.style.display = "block";
+        }
+        else if (n <= 9) {
+            message.style.background = "red";
+            message.innerHTML = "Vous avez perdu";
+            resultScrore.innerHTML = `Bad score`;
+            score.innerHTML = `Score Final <br> <span>${n}</span>`;
+            link.style.display = "block";
+        }
+        else if (n <= 14) {
+            message.style.background = "red";
+            message.innerHTML = "Vous avez gagné";
+            resultScrore.innerHTML = `Good score`;
+            score.innerHTML = `Score Final <br> <span>${n}</span>`;
+            link.style.display = "block";
+        }
+        else if (n <= 20) {
+            message.style.background = "red";
+            message.innerHTML = "Vous avez gagné";
+            resultScrore.innerHTML = `Very Good score`;
+            score.innerHTML = `Score Final <br> <span>${n}</span>`;
+            link.style.display = "block";
+        }
+        else {
+            message.style.background = "red";
+            message.innerHTML = "Vous avez gagné";
+            resultScrore.innerHTML = `Excellent`;
+            score.innerHTML = `Score Final <br> <span>${n}</span> `;
+            link.style.display = "block";
+        }
     }
 
     // Appel initial pour générer un calcul au chargement de la page
@@ -52,11 +91,8 @@ document.addEventListener('DOMContentLoaded', () => {
             compteur++;
             score.innerHTML = `Score: ${compteur}`;
         } else {
-            message.style.background = "red";
-            message.innerHTML = "Vous avez perdu";
             section.innerHTML = "";
-            score.innerHTML = `Score Final <i class="fa fa-smile-o"></i> <br> <span>${compteur}</span>`;
-            link.style.display = "block";
+            resultTest(compteur);
             return;
         }
 
